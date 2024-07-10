@@ -1,7 +1,12 @@
+require("dotenv").config()
+const connectToDB = require("./config/db.js")
+const route = require("./routes/route.js")
 const express = require("express");
 const app = express();
-app.get("/",(req,res)=>[
-    res.send("hellow everyone")
-])
+connectToDB();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-module.exports = app
+app.use("/" , route)
+
+module.exports = app 
