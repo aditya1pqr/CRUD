@@ -49,3 +49,35 @@ exports.getUser =async (req , res)=>{
     }
 
 }
+
+exports.updateUser = async(req, res)=>{
+   try {
+    // const {userId} =  req.params.id ;
+
+    // const {name , email} = rq.body
+
+    // const updated ={
+    //     name ,
+    //     email,
+        
+    // }
+   
+
+     const user = await User.findByIdAndUpdate(req.params.id , req.body)
+   
+
+     res.status(201).json({
+        succes:true,
+        message:"user updated is sucessfully",
+        user,
+     
+     })
+   } catch (error) {
+    console.log(error)
+    
+   }
+
+
+}
+
+
