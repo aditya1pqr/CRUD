@@ -56,11 +56,11 @@ exports.updateUser = async(req, res)=>{
 
     // const {name , email} = rq.body
 
-    // const updated ={
-    //     name ,
-    //     email,
+    // // const updated ={
+    // //     name ,
+    // //     email,
         
-    // }
+    // // }
    
 
      const user = await User.findByIdAndUpdate(req.params.id , req.body)

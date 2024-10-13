@@ -28,7 +28,7 @@ function UserList() {
          if(!(email && name)){
             alert(" Name and Email is requried ")
          }
-          const edit = axios.put(`//updateUser/${user._id}` , {
+          const edit = axios.put(`/updateUser/${user._id}` , {
             name: name,
             email: email,
           })
